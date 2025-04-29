@@ -312,33 +312,13 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
             align-items: center;
         }
 
-        .about-img {
-            position: relative;
-        }
-
-        .about-img img {
+        .about-text {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-img::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 5px solid var(--primary);
-            border-radius: 10px;
-            z-index: -1;
         }
 
         .about-text h3 {
@@ -479,12 +459,22 @@
 
         .project-img {
             height: 200px;
-            background-color: var(--primary);
+            background-color: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
         }
 
         .project-content {
@@ -662,10 +652,6 @@
             .hero-title {
                 font-size: 1.8rem;
             }
-
-            .about-content {
-                gap: 2rem;
-            }
         }
 
         @media screen and (max-width: 768px) {
@@ -703,13 +689,8 @@
                 font-size: 1.5rem;
             }
 
-            .about-content,
             .contact-container {
                 grid-template-columns: 1fr;
-            }
-
-            .about-img::before {
-                display: none;
             }
 
             .projects-container {
@@ -751,7 +732,7 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <div class="logo">Upendra<span>.</span></div>
+                <div class="logo">Surya<span>.</span></div>
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
@@ -774,7 +755,7 @@
                 <h1 class="hero-name">Upendra Surya</h1>
                 <h2 class="hero-title">Computer Science & AI Engineering Student</h2>
                 <p class="hero-description">A passionate data analyst and machine learning enthusiast with a focus on creating innovative solutions through technology.</p>
-                <a href="#contact" class="hero-cta">Get in Touch</a>
+                <a href="#contact" class="hero-cta">Get me in touch</a>
                 <div class="hero-social">
                     <a href="https://linkedin.com/in/upendrasurya" class="social-link" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
@@ -795,9 +776,6 @@
         <div class="container">
             <h2 class="section-title animate">About Me</h2>
             <div class="about-content">
-                <div class="about-img animate slideInLeft">
-                    <img src="https://wtxkrslssgzzxgdahbzd.supabase.co/storage/v1/object/public/legal//Screenshot%202025-04-12%20at%2002.06.00.png" alt="Upendra Surya">
-                </div>
                 <div class="about-text animate fadeInUp">
                     <h3>Data Analyst & AI Engineering Student</h3>
                     <p>
@@ -867,7 +845,7 @@
             <div class="projects-container">
                 <div class="project-card animate fadeInUp">
                     <div class="project-img">
-                        <i class="fas fa-dumbbell"></i>
+                        <img src="https://wtxkrslssgzzxgdahbzd.supabase.co/storage/v1/object/public/images//fitness.jpg" alt="Fitness Tracking Project" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Machine Learning Model for Fitness Tracking</h3>
@@ -885,7 +863,7 @@
                 </div>
                 <div class="project-card animate fadeInUp" style="animation-delay: 0.2s;">
                     <div class="project-img">
-                        <i class="fas fa-chart-line"></i>
+                        <img src="https://wtxkrslssgzzxgdahbzd.supabase.co/storage/v1/object/public/images//futurense.jpg" alt="Agent Performance Dashboard" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Agent Performance Analysis Dashboard</h3>
@@ -903,7 +881,7 @@
                 </div>
                 <div class="project-card animate fadeInUp" style="animation-delay: 0.4s;">
                     <div class="project-img">
-                        <i class="fas fa-robot"></i>
+                        <img src="https://wtxkrslssgzzxgdahbzd.supabase.co/storage/v1/object/public/images//email.jpg" alt="AI Email Chatbot" />
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">AI-Powered Email Chatbot</h3>
@@ -923,8 +901,52 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+   
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title animate">Education</h2>
+            <div class="experience-container">
+                <div class="experience-item animate fadeInUp">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Lovely Professional University</h3>
+                        <p class="experience-date">2022 - 2026</p>
+                    </div>
+                    <h4 class="experience-title">Bachelor of Technology (B.Tech) – Computer Science & Engineering (AI & DE)</h4>
+                    <div class="experience-description">
+                        <p>CGPA: 7.0</p>
+                        <p>Location: Jalandhar, Punjab</p>
+                    </div>
+                </div>
+                <div class="experience-item animate fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Shri Ram Global School</h3>
+                        <p class="experience-date">2018 - 2019</p>
+                    </div>
+                    <h4 class="experience-title">12th (CBSE)</h4>
+                    <div class="experience-description">
+                        <p>Percentage: 72%</p>
+                        <p>Location: Bangalore, Karnataka</p>
+                    </div>
+                </div>
+                <div class="experience-item animate fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="experience-header">
+                        <h3 class="experience-company">Narayana ONCS</h3>
+                        <p class="experience-date">2016 - 2017</p>
+                    </div>
+                    <h4 class="experience-title">10th</h4>
+                    <div class="experience-description">
+                        <p>Percentage: 99%</p>
+                        <p>Location: Anantapur, AP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Contact Section -->
+     <section id="contact" class="contact section">
         <div class="container">
             <h2 class="section-title animate">Get In Touch</h2>
             <div class="contact-container">
@@ -985,72 +1007,11 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title animate">Education</h2>
-            <div class="experience-container">
-                <div class="experience-item animate fadeInUp">
-                    <div class="experience-header">
-                        <h3 class="experience-company">Lovely Professional University</h3>
-                        <p class="experience-date">2022 - 2026</p>
-                    </div>
-                    <h4 class="experience-title">Bachelor of Technology (B.Tech) – Computer Science & Engineering (AI & DE)</h4>
-                    <div class="experience-description">
-                        <p>CGPA: 7.0</p>
-                        <p>Location: Jalandhar, Punjab</p>
-                    </div>
-                </div>
-                <div class="experience-item animate fadeInUp" style="animation-delay: 0.2s;">
-                    <div class="experience-header">
-                        <h3 class="experience-company">Shri Ram Global School</h3>
-                        <p class="experience-date">2018 - 2019</p>
-                    </div>
-                    <h4 class="experience-title">12th (CBSE)</h4>
-                    <div class="experience-description">
-                        <p>Percentage: 72%</p>
-                        <p>Location: Bangalore, Karnataka</p>
-                    </div>
-                </div>
-                <div class="experience-item animate fadeInUp" style="animation-delay: 0.4s;">
-                    <div class="experience-header">
-                        <h3 class="experience-company">Narayana ONCS</h3>
-                        <p class="experience-date">2016 - 2017</p>
-                    </div>
-                    <h4 class="experience-title">10th</h4>
-                    <div class="experience-description">
-                        <p>Percentage: 99%</p>
-                        <p>Location: Anantapur, AP</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <h2 class="section-title animate">Certifications</h2>
-            <div class="experience-container">
-                <div class="experience-item animate fadeInUp">
-                    <div class="experience-header">
-                        <h3 class="experience-company">Azure Data Fundamentals</h3>
-                        <p class="experience-date">November 2024</p>
-                    </div>
-                    <h4 class="experience-title">Microsoft</h4>
-                    <div class="experience-description">
-                        <p>Validated understanding of core data concepts and how they are implemented using Microsoft Azure data services.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Upendra<span>.</span></div>
+                <div class="footer-logo">surya<span>.</span></div>
                 <div class="footer-social">
                     <a href="https://linkedin.com/in/upendrasurya" class="social-link" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
@@ -1069,7 +1030,7 @@
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
-                <p class="footer-copy">&copy; 2025 Upendra Surya. All rights reserved.</p>
+
             </div>
         </div>
     </footer>
